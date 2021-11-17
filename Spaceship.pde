@@ -3,8 +3,8 @@ class Spaceship extends Floater {
     corners = 4;
     xCorners = new int[]{-8, 16, -8, -2};
     yCorners = new int[]{-8, 0, 8, 0};
-    myCenterX = 800.0;
-    myCenterY = 400.0;
+    myCenterX = 500;
+    myCenterY = 300;
     myColor = 255;
   }
   
@@ -22,10 +22,10 @@ class Spaceship extends Floater {
     noStroke();
     fill(0, 255, 255);
     translate((float)myCenterX, (float)myCenterY);
-    float dRadians = (float)(myPointDirection*(Math.PI/180));
+    float dRadians = (float)(myPointDirection*(Math.PI / 180));
     rotate(dRadians + (float)Math.PI / 2.5);
     rect(0, 15, 1, 10); //down (starting pos)
-    rotate((float)Math.PI/5.0);
+    rotate((float)Math.PI / 5.0);
     rect(0, 15, 1, 10); //up (starting pos)
     rotate((float)Math.PI / -10.0);
     rect(0, 15, 1, 10); //middle
