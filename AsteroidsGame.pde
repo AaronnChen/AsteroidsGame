@@ -1,4 +1,3 @@
-//your variable declarations here
 Spaceship spaceship = new Spaceship();
 Star[] stars = new Star[75];
 
@@ -6,48 +5,32 @@ boolean upPressed, downPressed, leftPressed, rightPressed, blast = false;
 boolean noGmode = true;
 
 public void setup() {
-  size(1600, 800);
+  size(1000, 600);
   
   for(int i = 0; i < stars.length; i++) {
     if(i % 3 == 0) stars[i] = new BlueStar();
     else stars[i] = new Star();
   }
+  
+  System.out.println(width / 2);
+  System.out.println(height / 2);
 }
 public void draw() {
   background(30, 25, 25);
   
-  for(int i = 0; i < stars.length; i++) {
-    stars[i].show();
-  }
+  for(int i = 0; i < stars.length; i++) stars[i].show();
   
+  spaceship.show(); //spaceship movement
   if(keyPressed == false && noGmode == true) {
     spaceship.slowXspeed();
-    spaceship.slowYspeed();
-  }
-  
-
-  spaceship.show();
-  
+    spaceship.slowYspeed(); }
   if(upPressed == true) {
     spaceship.accelerate(0.25); 
-    
-    spaceship.showBlast();
-
-  }
-  if(downPressed == true) {
-
-    spaceship.accelerate(-0.25); 
-  }
-  if(leftPressed == true) {
-
-    spaceship.turn(-5);
-  }
-  if(rightPressed == true) {
-
-    spaceship.turn(5);
-  }
-  
-  spaceship.move();
+    spaceship.showBlast(); }
+  if(downPressed == true) spaceship.accelerate(-0.25); 
+  if(leftPressed == true) spaceship.turn(-5);
+  if(rightPressed == true) spaceship.turn(5);
+  spaceship.move(); //end spaceship movement
    
 }
 
