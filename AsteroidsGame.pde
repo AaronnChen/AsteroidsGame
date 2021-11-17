@@ -11,9 +11,6 @@ public void setup() {
     if(i % 3 == 0) stars[i] = new BlueStar();
     else stars[i] = new Star();
   }
-  
-  System.out.println(width / 2);
-  System.out.println(height / 2);
 }
 public void draw() {
   background(30, 25, 25);
